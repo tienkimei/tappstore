@@ -2,7 +2,7 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 
 export default function Carts(props) {
-    const {cart} = useSelector(state=>state.shopReducer)
+    const {cart} = useSelector(state=>state.ShopReducer)
   return (
     <div>
         <h3>Cart</h3>
@@ -10,27 +10,25 @@ export default function Carts(props) {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>name</th>
+                    <th>title</th>
                     <th>image</th>
-                    <th>price</th>
                     <th>quantity</th>
                     <th>total</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                {cart.map((item,index) => {
+                {cart.map((item,index) => {    
+                   return(
                     <tr>
-                        <td>{item.id}</td>
-                        <td>{item.name}</td>
-                        <td><img src={item.image}/></td>
-                        <td>{item.price}</td>
-                        <td>{item.quantity}</td>
-                        <td>{item.quantity*item.price}</td>
-                        <td>
-                            <button className='btn btn-danger'>delete</button>
-                        </td>
-                    </tr>
+                    <td>{item.id}</td>
+                    <td>{item.title}</td>
+                    <td><img src={item.image}/></td>
+                    <td>
+                        <button className='btn btn-danger'>delete</button>
+                    </td>
+                    </tr> 
+                   )               
                      })}
                 
             </tbody>
@@ -38,3 +36,5 @@ export default function Carts(props) {
     </div>
   )
 }
+
+//00:24:38
