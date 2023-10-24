@@ -1,16 +1,13 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 
-export default function productItem(props) {
-  let {dataProduct} = useSelector(state=>state.shopReducer)
+export default function ProductItem(props) {
+  const {item}=props
   return (
     <div className='card'>
-      <img src='https://i.pravatar.cc/150?img=3'/>
+      <img src={item.image}/>
         <div className='card-body'>
-            <h2>Product</h2>
-            <p>1000</p>
-            <button className='btn btn-secondary'><i className="fa fa-cart-arrow-down"></i>add to cart</button>
-            
+            <h2>{item.title}</h2>
+            <button className='btn btn-secondary'><i className="fa fa-cart-arrow-down"></i>add to cart</button>     
         </div>
     </div>
   )
